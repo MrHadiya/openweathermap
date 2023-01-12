@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <style type="text/css" media="all">
+    #SelExample {
+      width: 200px;
+    }
+
+    .select2-container {
+      width: 300px !important;
+    }
+
+    #but_read {
+      height: 25px;
+    }
+
+    .about-caption {
+      text-align: center;
+    }
+
+
+
+    li {
+
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+
+    }
+
+
+
+    .table-header {
+      color: #ffe3af;
+      background-color: #95a5a663;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .table-row {
+      background-color: #ffffffc2;
+      box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .col-1 {
+      flex-basis: 10%;
+    }
+
+    .col-2 {
+      flex-basis: 40%;
+    }
+
+    .col-3 {
+      flex-basis: 25%;
+    }
+
+    .col-4 {
+      flex-basis: 25%;
+    }
+  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Air Pollution.">
+  <meta name="author" content="Devcrud">
+  <title>Air Pollution</title>
+
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home"
+  style="background:url('../public/bg.jpg');background-size: 100%;">
+
+
+  <header id="home" class="header">
+    <div class="overlay"></div>
+    <div class="header-content container" style="text-align: center;color: white;font-family: cursive;">
+      <h1 class="header-title">
+        <span class="down">Select city and check Air Pollution</span>
+      </h1>
+    </div>
+  </header>
+
+  <section class="section pt-0" id="about">
+    <div class="container text-center">
+      <div class="about">
+        <div class="about-caption">
+
+
+
+          <select id="getCityData">
+            <option value="lat=28.66&lon=77.23">Delhi</option>
+            <option value="lat=18.9667&lon=72.8333">Mumbai</option>
+            <option value="lat=22.5411&lon=88.3378">Kolkāta</option>
+            <option value="lat=12.9699&lon=77.598">Bangalore</option>
+            <option value="lat=13.0825&lon=80.275">Chennai</option>
+            <option value="lat=17.3667&lon=78.4667">Hyderābād</option>
+            <option value="lat=18.5196&lon=73.8553">Pune</option>
+            <option value="lat=23.03&lon=72.58">Ahmedabad</option>
+            <option value="lat=21.17&lon=72.83">Sūrat</option>
+            <option value="lat=26.847&lon=80.947">Lucknow</option>
+            <option value="lat=26.9167&lon=75.8667">Jaipur</option>
+            <option value="lat=26.4725&lon=80.3311">Cawnpore</option>
+            <option value="lat=25.15&lon=82.58">Mirzāpur</option>
+            <option value="lat=21.1539&lon=79.0831">Nāgpur</option>
+            <option value="lat=28.6667&lon=77.4167">Ghāziābād</option>
+            <option value="lat=22.7206&lon=75.8472">Indore</option>
+            <option value="lat=22.3&lon=73.2">Vadodara</option>
+            <option value="lat=17.7333&lon=83.3167">Vishākhapatnam</option>
+            <option value="lat=23.25&lon=77.4167">Bhopāl</option>
+            <option value="lat=18.6278&lon=73.8131">Chinchvad</option>
+            <option value="lat=25.61&lon=85.1414">Patna</option>
+            <option value="lat=30.9083&lon=75.8486">Ludhiāna</option>
+            <option value="lat=27.18&lon=78.02">Āgra</option>
+            <option value="lat=19.2502&lon=73.1602">Kalyān</option>
+            <option value="lat=9.9197&lon=78.1194">Madurai</option>
+            <option value="lat=22.8&lon=86.1833">Jamshedpur</option>
+            <option value="lat=20&lon=73.7833">Nāsik</option>
+            <option value="lat=28.4333&lon=77.3167">Farīdābād</option>
+            <option value="lat=19.88&lon=75.32">Aurangābād</option>
+            <option value="lat=22.2969&lon=70.7984">Rājkot</option>
+            <option value="lat=28.99&lon=77.7">Meerut</option>
+            <option value="lat=23.1667&lon=79.9333">Jabalpur</option>
+            <option value="lat=19.18&lon=72.9633">Thāne</option>
+            <option value="lat=23.7928&lon=86.435">Dhanbād</option>
+            <option value="lat=25.455&lon=81.84">Allahābād</option>
+            <option value="lat=25.3189&lon=83.0128">Vārānasi</option>
+            <option value="lat=34.0911&lon=74.8061">Srīnagar</option>
+            <option value="lat=31.6167&lon=74.85">Amritsar</option>
+            <option value="lat=27.88&lon=78.08">Alīgarh</option>
+            <option value="lat=19.3&lon=73.0667">Bhiwandi</option>
+            <option value="lat=26.215&lon=78.1931">Gwalior</option>
+            <option value="lat=21.2167&lon=81.4333">Bhilai</option>
+            <option value="lat=22.59&lon=88.31">Hāora</option>
+            <option value="lat=23.3556&lon=85.3347">Rānchi</option>
+            <option value="lat=16.5167&lon=80.6167">Bezwāda</option>
+            <option value="lat=30.7353&lon=76.7911">Chandīgarh</option>
+            <option value="lat=12.3086&lon=76.6531">Mysore</option>
+            <option value="lat=21.2379&lon=81.6337">Raipur</option>
+            <option value="lat=25.18&lon=75.83">Kota</option>
+            <option value="lat=28.364&lon=79.415">Bareilly</option>
+            <option value="lat=26.2918&lon=73.0168">Jodhpur</option>
+            <option value="lat=11&lon=76.9667">Coimbatore</option>
+            <option value="lat=26.15&lon=91.77">Dispur</option>
+            <option value="lat=26.1667&lon=91.7667">Guwāhāti</option>
+            <option value="lat=17.6833&lon=75.9167">Solāpur</option>
+            <option value="lat=10.8269&lon=78.6928">Trichinopoly</option>
+            <option value="lat=15.36&lon=75.125">Hubli</option>
+            <option value="lat=31.3256&lon=75.5792">Jalandhar</option>
+            <option value="lat=20.2644&lon=85.8281">Bhubaneshwar</option>
+            <option value="lat=19.3&lon=72.85">Bhayandar</option>
+            <option value="lat=28.8418&lon=78.7568">Morādābād</option>
+            <option value="lat=16.7&lon=74.2333">Kolhāpur</option>
+            <option value="lat=8.5&lon=76.8997">Thiruvananthapuram</option>
+            <option value="lat=29.964&lon=77.546">Sahāranpur</option>
+            <option value="lat=17.9756&lon=79.6011">Warangal</option>
+            <option value="lat=11.65&lon=78.1667">Salem</option>
+            <option value="lat=20.55&lon=74.55">Mālegaon</option>
+            <option value="lat=9.9667&lon=76.2833">Kochi</option>
+            <option value="lat=26.7611&lon=83.3667">Gorakhpur</option>
+            <option value="lat=13.9304&lon=75.56">Shimoga</option>
+            <option value="lat=11.1075&lon=77.3398">Tiruppūr</option>
+            <option value="lat=16.3&lon=80.45">Guntūr</option>
+            <option value="lat=22.2492&lon=84.8828">Raurkela</option>
+            <option value="lat=12.8703&lon=74.8806">Mangalore</option>
+            <option value="lat=19.15&lon=77.3333">Nānded</option>
+            <option value="lat=20.45&lon=85.8667">Cuttack</option>
+            <option value="lat=19.95&lon=79.3">Chānda</option>
+            <option value="lat=30.318&lon=78.029">Dehra Dūn</option>
+            <option value="lat=23.55&lon=87.32">Durgāpur</option>
+            <option value="lat=23.6833&lon=86.9667">Āsansol</option>
+            <option value="lat=21.765&lon=72.1369">Bhāvnagar</option>
+            <option value="lat=20.9333&lon=77.75">Amrāvati</option>
+            <option value="lat=14.4333&lon=79.9667">Nellore</option>
+            <option value="lat=26.468&lon=74.639">Ajmer</option>
+            <option value="lat=8.7289&lon=77.7081">Tinnevelly</option>
+            <option value="lat=28.0181&lon=73.3169">Bīkaner</option>
+            <option value="lat=23.8333&lon=91.2667">Agartala</option>
+            <option value="lat=23.1828&lon=75.7772">Ujjain</option>
+            <option value="lat=25.4486&lon=78.5696">Jhānsi</option>
+            <option value="lat=19.2167&lon=73.15">Ulhāsnagar</option>
+            <option value="lat=14.4667&lon=75.9167">Davangere</option>
+            <option value="lat=32.7333&lon=74.85">Jammu</option>
+            <option value="lat=15.8667&lon=74.5">Belgaum</option>
+            <option value="lat=17.3333&lon=76.8333">Gulbarga</option>
+            <option value="lat=22.47&lon=70.07">Jāmnagar</option>
+            <option value="lat=20.9&lon=74.7833">Dhūlia</option>
+            <option value="lat=24.75&lon=85.0167">Gaya</option>
+            <option value="lat=21.0167&lon=75.5667">Jalgaon</option>
+            <option value="lat=15.8222&lon=78.035">Kurnool</option>
+            <option value="lat=24.5833&lon=73.6833">Udaipur</option>
+            <option value="lat=15.15&lon=76.915">Bellary</option>
+            <option value="lat=16.8667&lon=74.5667">Sāngli</option>
+            <option value="lat=8.7833&lon=78.1333">Tuticorin</option>
+            <option value="lat=11.25&lon=75.7667">Calicut</option>
+            <option value="lat=20.7333&lon=77">Akola</option>
+            <option value="lat=25.25&lon=87.0167">Bhāgalpur</option>
+            <option value="lat=27.6119&lon=75.1397">Sīkar</option>
+            <option value="lat=13.33&lon=77.1">Tumkūr</option>
+            <option value="lat=8.8853&lon=76.5864">Quilon</option>
+            <option value="lat=29.4708&lon=77.7033">Muzaffarnagar</option>
+            <option value="lat=25.35&lon=74.6333">Bhīlwāra</option>
+            <option value="lat=18.6704&lon=78.1">Nizāmābād</option>
+            <option value="lat=22.8667&lon=88.4167">Bhātpāra</option>
+            <option value="lat=16.9333&lon=82.2167">Kākināda</option>
+            <option value="lat=19.2704&lon=76.76">Parbhani</option>
+            <option value="lat=22.69&lon=88.37">Pānihāti</option>
+            <option value="lat=18.4004&lon=76.57">Lātūr</option>
+            <option value="lat=28.9&lon=76.5667">Rohtak</option>
+            <option value="lat=9.4204&lon=77.58">Rājapālaiyam</option>
+            <option value="lat=19.0833&lon=74.7333">Ahmadnagar</option>
+            <option value="lat=14.4667&lon=78.8167">Cuddapah</option>
+            <option value="lat=16.9833&lon=81.7833">Rājahmundry</option>
+            <option value="lat=27.5667&lon=76.6167">Alwar</option>
+            <option value="lat=26.12&lon=85.3833">Muzaffarpur</option>
+            <option value="lat=22.15&lon=82.0167">Bilāspur</option>
+            <option value="lat=27.4833&lon=77.6833">Mathura</option>
+            <option value="lat=22.67&lon=88.37">Kāmārhāti</option>
+            <option value="lat=30.3204&lon=76.385">Patiāla</option>
+            <option value="lat=23.8504&lon=78.75">Saugor</option>
+            <option value="lat=16.8244&lon=75.7154">Bijāpur</option>
+            <option value="lat=19.32&lon=84.8">Brahmapur</option>
+            <option value="lat=27.8804&lon=79.905">Shāhjānpur</option>
+            <option value="lat=10.52&lon=76.21">Trichūr</option>
+            <option value="lat=23.25&lon=87.85">Barddhamān</option>
+            <option value="lat=23.73&lon=86.85">Kulti</option>
+            <option value="lat=21.4704&lon=83.9701">Sambalpur</option>
+            <option value="lat=25.78&lon=87.47">Purnea</option>
+            <option value="lat=29.1489&lon=75.7367">Hisar</option>
+            <option value="lat=27.15&lon=78.3949">Fīrozābād</option>
+            <option value="lat=17.9229&lon=77.5175">Bīdar</option>
+            <option value="lat=28.8154&lon=79.025">Rāmpur</option>
+            <option value="lat=26.72&lon=88.42">Shiliguri</option>
+            <option value="lat=22.65&lon=88.34">Bāli</option>
+            <option value="lat=29.4004&lon=76.97">Pānīpat</option>
+            <option value="lat=18.4333&lon=79.15">Karīmnagar</option>
+            <option value="lat=23.2504&lon=69.81">Bhuj</option>
+            <option value="lat=16.7&lon=74.47">Ichalkaranji</option>
+            <option value="lat=13.65&lon=79.42">Tirupati</option>
+            <option value="lat=15.2667&lon=76.4">Hospet</option>
+            <option value="lat=23.7104&lon=92.72">Āīzawl</option>
+            <option value="lat=24.16&lon=80.83">Sannai</option>
+            <option value="lat=22.2333&lon=88.45">Bārāsat</option>
+            <option value="lat=23.3167&lon=75.0667">Ratlām</option>
+            <option value="lat=34.4&lon=74.28">Handwāra</option>
+            <option value="lat=21.19&lon=81.28">Drug</option>
+            <option value="lat=24.82&lon=93.95">Imphāl</option>
+            <option value="lat=14.6833&lon=77.6">Anantapur</option>
+            <option value="lat=26.7855&lon=79.015">Etāwah</option>
+            <option value="lat=16.2104&lon=77.355">Rāichūr</option>
+            <option value="lat=15.5&lon=80.05">Ongole</option>
+            <option value="lat=27.2172&lon=77.49">Bharatpur</option>
+            <option value="lat=25.42&lon=86.13">Begusarai</option>
+            <option value="lat=28.9958&lon=77.0114">Sonīpat</option>
+            <option value="lat=18.8&lon=79.45">Rāmgundam</option>
+            <option value="lat=28.7437&lon=77.7628">Hāpur</option>
+            <option value="lat=22.47&lon=88.11">Uluberiya</option>
+            <option value="lat=21.6425&lon=69.6047">Porbandar</option>
+            <option value="lat=25.7725&lon=73.3233">Pāli</option>
+            <option value="lat=18.1167&lon=83.4167">Vizianagaram</option>
+            <option value="lat=11.93&lon=79.83">Puducherry</option>
+            <option value="lat=29.6804&lon=76.97">Karnāl</option>
+            <option value="lat=8.17&lon=77.43">Nāgercoil</option>
+            <option value="lat=10.8&lon=79.15">Tanjore</option>
+            <option value="lat=28.58&lon=78.55">Sambhal</option>
+            <option value="lat=22.9&lon=88.42">Naihāti</option>
+            <option value="lat=17.45&lon=78.5">Secunderābād</option>
+            <option value="lat=22.3302&lon=87.3237">Kharagpur</option>
+            <option value="lat=10.35&lon=77.95">Dindigul</option>
+            <option value="lat=31.1033&lon=77.1722">Shimla</option>
+            <option value="lat=25&lon=88.15">Ingrāj Bāzār</option>
+            <option value="lat=16.7&lon=81.1">Ellore</option>
+            <option value="lat=19.8&lon=85.8167">Puri</option>
+            <option value="lat=22.0257&lon=88.0583">Haldia</option>
+            <option value="lat=15.48&lon=78.48">Nandyāl</option>
+            <option value="lat=28.4104&lon=77.8484">Bulandshahr</option>
+            <option value="lat=22.7&lon=85.63">Chakradharpur</option>
+            <option value="lat=28.7833&lon=76.1333">Bhiwāni</option>
+            <option value="lat=28.45&lon=77.02">Gurgaon</option>
+            <option value="lat=21.3004&lon=76.13">Burhānpur</option>
+            <option value="lat=17.25&lon=80.15">Khammam</option>
+            <option value="lat=22.7&lon=88.45">Madhyamgram</option>
+            <option value="lat=23.22&lon=72.68">Ghāndīnagar</option>
+            <option value="lat=24.1&lon=88.25">Baharampur</option>
+            <option value="lat=16.7333&lon=77.9833">Mahbūbnagar</option>
+            <option value="lat=23.6&lon=72.4">Mahesāna</option>
+            <option value="lat=15.63&lon=77.28">Ādoni</option>
+            <option value="lat=25.6167&lon=88.1167">Rāiganj</option>
+            <option value="lat=21.02&lon=75.83">Bhusāval</option>
+            <option value="lat=27.6204&lon=81.6699">Bahraigh</option>
+            <option value="lat=22.75&lon=88.34">Shrīrāmpur</option>
+            <option value="lat=26.1505&lon=75.79">Tonk</option>
+            <option value="lat=29.4904&lon=75.03">Sirsa</option>
+            <option value="lat=25.7333&lon=82.6833">Jaunpur</option>
+            <option value="lat=13.55&lon=78.5">Madanapalle</option>
+            <option value="lat=22.9&lon=88.39">Hugli</option>
+            <option value="lat=12.9204&lon=79.15">Vellore</option>
+            <option value="lat=9.5004&lon=76.37">Alleppey</option>
+            <option value="lat=11.75&lon=79.75">Cuddalore</option>
+            <option value="lat=24.6561&lon=84.4356">Deo</option>
+            <option value="lat=15.82&lon=80.35">Chīrāla</option>
+            <option value="lat=16.1667&lon=81.1333">Machilīpatnam</option>
+            <option value="lat=22.4333&lon=87.3333">Medinīpur</option>
+            <option value="lat=34.2&lon=74.34">Bāramūla</option>
+            <option value="lat=22.8667&lon=88.3833">Chandannagar</option>
+            <option value="lat=25.8804&lon=80.8">Fatehpur</option>
+            <option value="lat=13.3322&lon=74.7461">Udipi</option>
+            <option value="lat=16.243&lon=80.64">Tenāli</option>
+            <option value="lat=27.63&lon=80.75">Sitalpur</option>
+            <option value="lat=12.8308&lon=79.7078">Conjeeveram</option>
+            <option value="lat=14.73&lon=78.55">Proddatūr</option>
+            <option value="lat=20.8504&lon=72.92">Navsāri</option>
+            <option value="lat=22.7755&lon=73.6149">Godhra</option>
+            <option value="lat=28.03&lon=79.09">Budaun</option>
+            <option value="lat=13.2&lon=79.1167">Chittoor</option>
+            <option value="lat=31.52&lon=75.98">Harīpur</option>
+            <option value="lat=25.88&lon=86.6">Saharsa</option>
+            <option value="lat=23.5239&lon=77.8061">Vidisha</option>
+            <option value="lat=32.2689&lon=75.6497">Pathānkot</option>
+            <option value="lat=17.05&lon=79.27">Nalgonda</option>
+            <option value="lat=27.4833&lon=95">Dibrugarh</option>
+            <option value="lat=25.2167&lon=88.7667">Bālurghāt</option>
+            <option value="lat=23.4&lon=88.5">Krishnanagar</option>
+            <option value="lat=26.7504&lon=82.17">Fyzābād</option>
+            <option value="lat=24.7904&lon=92.79">Silchar</option>
+            <option value="lat=23.25&lon=88.43">Shāntipur</option>
+            <option value="lat=13.83&lon=77.49">Hindupur</option>
+            <option value="lat=11.3408&lon=77.7172">Erode</option>
+            <option value="lat=23.7&lon=87.08">Jāmuria</option>
+            <option value="lat=22.83&lon=88.63">Hābra</option>
+            <option value="lat=30.3786&lon=76.7725">Ambāla</option>
+            <option value="lat=30.7194&lon=76.7181">Mauli</option>
+            <option value="lat=13.1333&lon=78.1333">Kolār</option>
+            <option value="lat=25.5744&lon=91.8789">Shillong</option>
+            <option value="lat=16.5333&lon=81.5333">Bhīmavaram</option>
+            <option value="lat=28.7&lon=77.2">New Delhi</option>
+            <option value="lat=24.03&lon=75.08">Mandsaur</option>
+            <option value="lat=10.9805&lon=79.4">Kumbakonam</option>
+            <option value="lat=12.2604&lon=79.1">Tiruvannāmalai</option>
+            <option value="lat=18.3&lon=83.9">Chicacole</option>
+            <option value="lat=23.25&lon=87.0667">Bānkura</option>
+            <option value="lat=12.5242&lon=76.8958">Mandya</option>
+            <option value="lat=13.005&lon=76.1028">Hassan</option>
+            <option value="lat=20.4&lon=78.1333">Yavatmāl</option>
+            <option value="lat=28.64&lon=79.81">Pīlibhīt</option>
+            <option value="lat=10.7792&lon=76.6547">Pālghāt</option>
+            <option value="lat=30.1204&lon=74.29">Abohar</option>
+            <option value="lat=16.5333&lon=81.7333">Pālakollu</option>
+            <option value="lat=22.97&lon=88.43">Kānchrāpāra</option>
+            <option value="lat=11.6667&lon=92.75">Port Blair</option>
+            <option value="lat=26.4837&lon=89.5667">Alīpur Duār</option>
+            <option value="lat=27.6&lon=78.05">Hāthras</option>
+            <option value="lat=15.17&lon=77.38">Guntakal</option>
+            <option value="lat=23.4088&lon=88.3657">Navadwīp</option>
+            <option value="lat=22.6572&lon=88.8942">Basīrhat</option>
+            <option value="lat=22.95&lon=88.42">Hālīsahar</option>
+            <option value="lat=22.71&lon=88.35">Rishra</option>
+            <option value="lat=14.4142&lon=77.715">Dharmavaram</option>
+            <option value="lat=22.79&lon=88.32">Baidyabāti</option>
+            <option value="lat=27.0417&lon=88.2631">Darjeeling</option>
+            <option value="lat=34.3&lon=74.47">Sopur</option>
+            <option value="lat=16.43&lon=80.99">Gudivāda</option>
+            <option value="lat=19.6667&lon=78.5333">Adilābād</option>
+            <option value="lat=22.74&lon=88.37">Titāgarh</option>
+            <option value="lat=24.8894&lon=74.6239">Chittaurgarh</option>
+            <option value="lat=16.236&lon=80.054">Narasaraopet</option>
+            <option value="lat=22.62&lon=88.42">Dam Dam</option>
+            <option value="lat=10.3204&lon=76.97">Vālpārai</option>
+            <option value="lat=18.1667&lon=76.05">Osmānābād</option>
+            <option value="lat=22.8&lon=88.37">Champdani</option>
+            <option value="lat=23.07&lon=88.82">Bangaon</option>
+            <option value="lat=22.72&lon=88.38">Khardah</option>
+            <option value="lat=14.92&lon=78.02">Tādpatri</option>
+            <option value="lat=26.5167&lon=88.7333">Jalpāiguri</option>
+            <option value="lat=17.15&lon=79.6167">Suriāpet</option>
+            <option value="lat=16.8333&lon=81.5">Tādepallegūdem</option>
+            <option value="lat=22.97&lon=88.4">Bānsbāria</option>
+            <option value="lat=10.7667&lon=79.8333">Negapatam</option>
+            <option value="lat=22.82&lon=88.35">Bhadreswar</option>
+            <option value="lat=16.0892&lon=80.1672">Chilakalūrupet</option>
+            <option value="lat=22.975&lon=88.4344">Kalyani</option>
+            <option value="lat=27.33&lon=88.62">Gangtok</option>
+            <option value="lat=25.6667&lon=94.1194">Kohīma</option>
+            <option value="lat=22.3131&lon=72.6194">Khambhāt</option>
+            <option value="lat=24.7704&lon=84.38">Aurangābād</option>
+            <option value="lat=15.7333&lon=77.4833">Emmiganūr</option>
+            <option value="lat=14.05&lon=78.75">Rāyachoti</option>
+            <option value="lat=14.9123&lon=79.9944">Kāvali</option>
+            <option value="lat=18.8679&lon=79.4639">Mancherāl</option>
+            <option value="lat=14.12&lon=78.17">Kadiri</option>
+            <option value="lat=11.4086&lon=76.6939">Ootacamund</option>
+            <option value="lat=17.68&lon=83.02">Anakāpalle</option>
+            <option value="lat=18.38&lon=78.83">Sirsilla</option>
+            <option value="lat=18.3167&lon=78.35">Kāmāreddipet</option>
+            <option value="lat=17.5815&lon=80.6765">Pāloncha</option>
+            <option value="lat=17.55&lon=80.63">Kottagūdem</option>
+            <option value="lat=16.75&lon=81.7">Tanuku</option>
+            <option value="lat=18.67&lon=77.9">Bodhan</option>
+            <option value="lat=10.9504&lon=78.0833">Karūr</option>
+            <option value="lat=16.43&lon=80.55">Mangalagiri</option>
+            <option value="lat=29.4&lon=77.2">Kairāna</option>
+            <option value="lat=15.735&lon=79.27">Mārkāpur</option>
+            <option value="lat=30.19&lon=74.499">Malaut</option>
+            <option value="lat=15.8889&lon=80.47">Bāpatla</option>
+            <option value="lat=14.75&lon=79.05">Badvel</option>
+            <option value="lat=26.75&lon=94.2167">Jorhāt</option>
+            <option value="lat=18.82&lon=78.72">Koratla</option>
+            <option value="lat=14.4167&lon=78.2333">Pulivendla</option>
+            <option value="lat=26.9167&lon=70.9167">Jaisalmer</option>
+            <option value="lat=16.4667&lon=80.6">Tādepalle</option>
+            <option value="lat=18.79&lon=78.29">Armūr</option>
+            <option value="lat=20.17&lon=85.7">Jatani</option>
+            <option value="lat=16.23&lon=77.8">Gadwāl</option>
+            <option value="lat=13.33&lon=79.58">Nagari</option>
+            <option value="lat=16.361&lon=78.0627">Wanparti</option>
+            <option value="lat=16.0667&lon=80.5667">Ponnūru</option>
+            <option value="lat=16.05&lon=79.75">Vinukonda</option>
+            <option value="lat=27.1&lon=93.62">Itānagar</option>
+            <option value="lat=26.6338&lon=92.8">Tezpur</option>
+            <option value="lat=16.4333&lon=81.6833">Narasapur</option>
+            <option value="lat=19.3333&lon=79.4833">Kothāpet</option>
+            <option value="lat=16.48&lon=79.43">Mācherla</option>
+            <option value="lat=15.2165&lon=79.9042">Kandukūr</option>
+            <option value="lat=17.0531&lon=82.1695">Sāmalkot</option>
+            <option value="lat=18.5667&lon=83.4167">Bobbili</option>
+            <option value="lat=16.3962&lon=80.1497">Sattenapalle</option>
+            <option value="lat=27.5806&lon=77.7006">Vrindāvan</option>
+            <option value="lat=16.87&lon=81.93">Mandapeta</option>
+            <option value="lat=19.0558&lon=79.4931">Belampalli</option>
+            <option value="lat=17.8864&lon=83.4471">Bhīmunipatnam</option>
+            <option value="lat=21.8704&lon=73.5026">Nāndod</option>
+            <option value="lat=17.1167&lon=82.2667">Pithāpuram</option>
+            <option value="lat=13.3667&lon=78.5833">Punganūru</option>
+            <option value="lat=13.45&lon=79.55">Puttūr</option>
+            <option value="lat=25.35&lon=72.6167">Jalor</option>
+            <option value="lat=13.2&lon=78.75">Palmaner</option>
+            <option value="lat=22.72&lon=72.47">Dholka</option>
+            <option value="lat=16.892&lon=80.0976">Jaggayyapeta</option>
+            <option value="lat=17.35&lon=82.55">Tuni</option>
+            <option value="lat=16.5833&lon=82.0167">Amalāpuram</option>
+            <option value="lat=18.8&lon=78.93">Jagtiāl</option>
+            <option value="lat=17.33&lon=77.9">Vikārābād</option>
+            <option value="lat=13.9667&lon=79.5833">Venkatagiri</option>
+            <option value="lat=21.7&lon=71.97">Sihor</option>
+            <option value="lat=17.72&lon=79.18">Jangaon</option>
+            <option value="lat=18.9822&lon=79.4811">Mandamāri</option>
+            <option value="lat=18.8297&lon=78.5878">Metpalli</option>
+            <option value="lat=16.02&lon=80.85">Repalle</option>
+            <option value="lat=19.1&lon=77.9667">Bhainsa</option>
+            <option value="lat=22.03&lon=71.2">Jasdan</option>
+            <option value="lat=14.85&lon=78.38">Jammalamadugu</option>
+            <option value="lat=9.28&lon=79.3">Rāmeswaram</option>
+            <option value="lat=15.811&lon=79.9738">Addanki</option>
+            <option value="lat=16.92&lon=81.67">Nidadavole</option>
+            <option value="lat=17.4139&lon=78.5783">Bodupāl</option>
+            <option value="lat=25.03&lon=85.42">Rājgīr</option>
+            <option value="lat=33.38&lon=74.3">Rajaori</option>
+            <option value="lat=29.3919&lon=79.4542">Naini Tal</option>
+            <option value="lat=12.9&lon=76.39">Channarāyapatna</option>
+            <option value="lat=24.27&lon=80.75">Maihar</option>
+            <option value="lat=15.48&lon=73.83">Panaji</option>
+            <option value="lat=19.2&lon=73.88">Junnar</option>
+            <option value="lat=18.4167&lon=83.9">Amudālavalasa</option>
+            <option value="lat=20.417&lon=72.85">Damān</option>
+            <option value="lat=17.0167&lon=81.7333">Kovvūr</option>
+            <option value="lat=30.92&lon=77.12">Solan</option>
+            <option value="lat=22.2403&lon=68.9686">Dwārka</option>
+            <option value="lat=9.2647&lon=76.7872">Pathanāmthitta</option>
+            <option value="lat=10.23&lon=77.48">Kodaikānal</option>
+            <option value="lat=32.93&lon=75.13">Udhampur</option>
+            <option value="lat=15.3784&lon=78.9265">Giddalūr</option>
+            <option value="lat=17.6&lon=80.33">Yellandu</option>
+            <option value="lat=12.4181&lon=76.6947">Shrīrangapattana</option>
+            <option value="lat=10.196&lon=76.386">Angamāli</option>
+            <option value="lat=23.5245&lon=80.8365">Umaria</option>
+            <option value="lat=27.0911&lon=77.6611">Fatehpur Sīkri</option>
+            <option value="lat=17.9373&lon=80.8185">Mangūr</option>
+            <option value="lat=16.2667&lon=81.1667">Pedana</option>
+            <option value="lat=18.89&lon=72.95">Uran</option>
+            <option value="lat=15.5819&lon=79.868">Chimākurti</option>
+            <option value="lat=16.7&lon=78.9333">Devarkonda</option>
+            <option value="lat=34.4225&lon=74.6375">Bandipura</option>
+            <option value="lat=20.2666&lon=73.0166">Silvassa</option>
+            <option value="lat=14.95&lon=77.5833">Pāmidi</option>
+            <option value="lat=18.4151&lon=84.0447">Narasannapeta</option>
+            <option value="lat=22.1772&lon=88.4258">Jaynagar-Majilpur</option>
+            <option value="lat=24.0299&lon=73.0463">Khed Brahma</option>
+            <option value="lat=24.85&lon=79.9333">Khajurāho</option>
+            <option value="lat=15.2333&lon=78.3167">Koilkuntla</option>
+            <option value="lat=20.7197&lon=70.9904">Diu</option>
+            <option value="lat=33.64&lon=75.02">Kulgam</option>
+            <option value="lat=26.08&lon=89.97">Gauripur</option>
+            <option value="lat=24.5925&lon=72.7083">Abu</option>
+            <option value="lat=15.25&lon=74.1">Curchorem</option>
+            <option value="lat=10.5626&lon=72.6369">Kavaratti</option>
+            <option value="lat=30.6915&lon=76.8537">Panchkula</option>
+            <option value="lat=19.3316&lon=79.4661">Kagaznāgār</option>
+          </select>
+
+       
+
+        </div>
+
+
+
+
+      </div><!-- end of about wrapper -->
+    </div><!-- end of container -->
+
+    <div id="listTable" class="container " style="margin-top: 50px;">
+
+      <ul class="responsive-table">
+        <li class="table-header">
+          <div class='col col-1'>Index</div>
+          <div class='col col-2'>Polluting Gases</div>
+          <div class="col col-3">Polluted Air in μg/m3</div>
+          <div class="col col-4">Qualitative </div>
+        </li>
+        <li class='table-row' id='CO'></li>
+        <li class='table-row' id='NO'></li>
+        <li class='table-row' id='NO2'></li>
+        <li class='table-row' id='O3'></li>
+        <li class='table-row' id='SO2'></li>
+        <li class='table-row' id='NH3'></li>
+        <li class='table-row' id='PM25'></li>
+        <li class='table-row' id='PM10'></li>
+      </ul>
+    </div>
+  </section> <!-- end of about section -->
+
+
+</body>
+<script language="JavaScript" type="text/javascript" src="../public/js/jquery-3.4.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+  $(document).ready(function () {
+
+
+    $("#listTable").hide();
+    $("#getCityData").select2();
+    $("#getCityData").select2("val", "5");
+    // $("#getCityData").change('change', function () {
+    //   alert(this.value)
+    // });
+    $("#getCityData").change(function () {
+      var citydata = $('#getCityData').val();
+      var splitData = citydata.split("&");
+
+      $.ajax({
+
+        type: 'GET',
+        url: 'http://localhost:3005/api/get-city-pollution',
+        contentType: 'application/json; charset=utf-8',
+        data: { lat: splitData[0].split("=")[1], lon: splitData[1].split("=")[1] },
+
+        success: function (json) {
+          try {
+
+            if (json.status && json.data) {
+              const finalData = json.data
+              $("#CO").replaceWith("<li class='table-row' id='CO'><div class='col col-1'>1</div><div class='col col-2'>Carbon monoxide (CO)</div><div class='col col-3'>" + finalData.co + "</div><div class='col col-4'>-</div></li>");
+              $("#NO").replaceWith(" <li class='table-row' id='NO'><div class='col col-1'>2</div><div class='col col-2'>Nitrogen monoxide (NO)</div><div class='col col-3'>" + finalData.no + "</div><div class='col col-4'>-</div></li>");
+              $("#NO2").replaceWith(" <li class='table-row' id='NO2'><div class='col col-1'>3</div><div class='col col-2'>Nitrogen dioxide (NO2)</div><div class='col col-3'>" + finalData.no2 + "</div><div class='col col-4'>" + finalData.no2_qua + "</div></li>");
+              $("#O3").replaceWith("<li class='table-row' id='O3'>  <div class='col col-1'>4</div><div class='col col-2'>Ozone (O3)</div><div class='col col-3'>" + finalData.o3 + "</div><div class='col col-4'>" + finalData.o3_qua + "</div></li>");
+              $("#SO2").replaceWith(" <li class='table-row' id='SO2'><div class='col col-1'>5</div><div class='col col-2'>Sulphur dioxide (SO2)</div><div class='col col-3'>" + finalData.so2 + "</div><div class='col col-4'>-</div></li>");
+              $("#NH3").replaceWith("  <li class='table-row' id='NH3'><div class='col col-1'>6</div><div class='col col-2'>Ammonia (NH3)</div><div class='col col-3'>" + finalData.nh3 + "</div><div class='col col-4'>-</div></li>");
+              $("#PM25").replaceWith("<li class='table-row' id='PM25'><div class='col col-1'>7</div><div class='col col-2'>Particulates (PM2.5)</div><div class='col col-3'>" + finalData.pm2_5 + "</div><div class='col col-4'>" + finalData.pm2_5_qua + "</div></li>");
+              $("#PM10").replaceWith(" <li class='table-row' id='PM10'><div class='col col-1'>8</div><div class='col col-2'>Particulates (PM10)</div><div class='col col-3'>" + finalData.pm10 + "</div><div class='col col-4'>" + finalData.pm10_qua + "</div></li>");
+
+
+              $("#listTable").show();
+            }
+            console.log(json)
+
+
+          } catch (ex) {
+            alert(ex);
+          }
+        }
+
+      });
+
+    });
+  });
+
+
+</script>
+
+</html>

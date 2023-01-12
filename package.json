@@ -1,0 +1,30 @@
+{
+  "name": "openweathermap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^15.0.3",
+    "async": "^3.2.4",
+    "axios": "^1.2.2",
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "html": "^1.0.0",
+    "http": "^0.0.1-security",
+    "isset": "^1.0.4",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.20",
+    "path": "^0.12.7",
+    "url": "^0.11.0"
+  }
+}
