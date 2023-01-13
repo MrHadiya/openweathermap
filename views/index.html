@@ -547,11 +547,11 @@
     $("#getCityData").change(function () {
       var citydata = $('#getCityData').val();
       var splitData = citydata.split("&");
-
+      var host = window.location.protocol + "//" + window.location.host;
       $.ajax({
 
         type: 'GET',
-        url: 'https://openweathermap-vipul-hadiya.onrender.com/api/get-city-pollution',
+        url: host + '/api/get-city-pollution',
         contentType: 'application/json; charset=utf-8',
         data: { lat: splitData[0].split("=")[1], lon: splitData[1].split("=")[1] },
 
